@@ -1,0 +1,29 @@
+{
+  "name": "playolaizq-cli-node",
+  "version": "0.1.0",
+  "description": "Command Line Interface (CLI) tool built in Node.js",
+  "author": "playolaizq (https://github.com/playolaizq)",
+  "maintainers": [
+    "playolaizq (https://github.com/playolaizq)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/playolaizq/playolaizq-cli-node"
+  },
+  "main": "init.js",
+  "bin": {
+    "playolaizq-cli-node": "init.js"
+  },
+  "type": "module",
+  "scripts": {
+    "init": "node init.js"
+  },
+  "keywords": [
+    "cli",
+    "node"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0"
+  }
+}
