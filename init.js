@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
 import path from "path";
+import { fileURLToPath } from "url";
 import { copy_dir_recursively } from "./lib/filesystem.js";
-import {
-  prompt_app_name,
-  prompt_language,
-  prompt_state_lib
-} from "./lib/prompts.js";
+import { prompt_app_name, prompt_language, prompt_state_lib } from "./lib/prompts.js";
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function init() {
   console.log("===============================");
@@ -19,7 +20,7 @@ async function init() {
   
   const copy_start_time = Date.now();
 
-  const source = `./templates/react-vite-${language}-${state_lib}`;
+  const source = path.resolve(__dirname, 'templates', `react-vite-${language}-${state_lib}`);
   const destination = `./${app_name}`;
   console.log(`Copying template... ${source}`);
 
